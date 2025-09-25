@@ -1,0 +1,81 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title" : {"text": "Water Quality Monitering Stations"},
+    "projection": {"type": "equirectangular"},
+    "layer" : [
+        {
+            "data": {"url": "Detail_NSW_Map.json",
+            "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
+            },
+            "mark": {"type": "geoshape", "fill":"blanchedalmond","stroke": "black"}
+        },
+        {
+             "data": {"url": "Detail_NSW_Map.json",
+            "format": {"type": "topojson", "feature": "ne_10m_ocean"}
+            },
+            "mark": {"type": "geoshape", "color": "#E3F2FD"}
+        },
+        {
+             "data": {"url": "Detail_NSW_Map.json",
+            "format": {"type": "topojson", "feature": "ne_10m_bathymetry_K_200"}
+            },
+            "mark": {"type": "geoshape", "color": "#BBDEFB"}
+        },
+        {
+             "data": {"url": "Detail_NSW_Map.json",
+            "format": {"type": "topojson", "feature": "ne_10m_bathymetry_J_1000"}
+            },
+            "mark": {"type": "geoshape", "color": "#90CAF9"}
+        },
+        {
+             "data": {"url": "Detail_NSW_Map.json",
+            "format": {"type": "topojson", "feature": "ne_10m_bathymetry_I_2000"}
+            },
+            "mark": {"type": "geoshape", "color": "#64B5F6"}
+        },
+        {
+             "data": {"url": "Detail_NSW_Map.json",
+            "format": {"type": "topojson", "feature": "ne_10m_bathymetry_H_3000"}
+            },
+            "mark": {"type": "geoshape", "color": "#42A5F5"}
+        },  
+        {
+             "data": {"url": "Detail_NSW_Map.json",
+            "format": {"type": "topojson", "feature": "ne_10m_bathymetry_G_4000"}
+            },
+            "mark": {"type": "geoshape", "color": "#2196F3"}
+        },
+        {
+             "data": {"url": "Detail_NSW_Map.json",
+            "format": {"type": "topojson", "feature": "ne_10m_bathymetry_F_5000"}
+            },
+            "mark": {"type": "geoshape", "color": "#1E88E5"}
+        },
+        {
+             "data": {"url": "Detail_NSW_Map.json",
+            "format": {"type": "topojson", "feature": "ne_10m_rivers_australia"}
+            },
+            "mark": {"type": "geoshape","stroke":"red", "fill": null}
+        },
+        
+        {
+           "data": { "url": "nsw-coast-2016-2021-wq-data-for-rci.csv"},
+           "mark": {"type": "circle","tooltip": {"content":"data"},"fill":"darkblue","size":4},
+           "encoding": {
+                "longitude":{"field":"Longitude","type": "quantitative"},
+                "latitude":{"field": "Latitude","type": "quantitative"}
+            }
+        },
+        {
+            "data": {"url": "Water quality-1757995082617.csv"},
+            "mark": {"type": "circle","tooltip": {"content":"data"},"fill":"darkorange","size":4},
+            "encoding": {
+                "longitude":{"field":"Longitude","type": "quantitative"},
+                "latitude":{"field": "Latitude","type": "quantitative"}
+            }
+
+        }
+ 
+    ]
+
+}
