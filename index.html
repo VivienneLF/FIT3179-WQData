@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vega@6.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.0.2"></script>
+
+    <title>WQ-Monitering-NSW</title>
+</head>
+<body>
+    
+    <div id="v1"></div>
+    <script type="text/javascript">
+        var specVis1 = "./WQ_monitering_stations_map2.vg.json";
+        vegaEmbed('#v1', specVis1, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+    
+</body>
+</html>
+
